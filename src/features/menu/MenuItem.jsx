@@ -1,12 +1,15 @@
-function MenuItem({ pizza }) {
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+/* eslint-disable react/prop-types */
+import { formatCurrency } from "../../utils/helpers";
+
+function MenuItem({ item }) {
+  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = item;
 
   return (
-    <li>
+    <li key={id}>
       <img src={imageUrl} alt={name} />
       <div>
         <p>{name}</p>
-        <p>{ingredients.join(', ')}</p>
+        <p>{ingredients.join(", ")}</p>
         <div>
           {!soldOut ? <p>{formatCurrency(unitPrice)}</p> : <p>Sold out</p>}
         </div>
