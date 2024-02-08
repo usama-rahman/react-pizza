@@ -1,1 +1,1 @@
-# React Pizza
+# New Project: “Fast React Pizza Co.”
